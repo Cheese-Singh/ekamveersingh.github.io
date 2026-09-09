@@ -991,71 +991,10 @@
 
 
       <!-- =========================
-           FUNGAL KERATITIS
-      ========================= -->
-
-      <div class="project-card" style="border-left: 3px solid var(--gwen-border-strong);">
-
-        <div class="proj-top">
-
-          <span class="proj-name">
-            Automated Fungal Keratitis Screening
-          </span>
-
-          <div class="proj-badges">
-
-            <span class="proj-badge">
-              Research
-            </span>
-
-            <span class="proj-badge in-progress">
-              Prototype
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <p class="proj-desc">
-
-          Computer vision system for screening fungal keratitis from In Vivo
-          Confocal Microscopy images and patient risk factors, developed by a
-          3-person team after a clinical need was raised by a PGI-MER physician to faculty.
-
-          Seven image-processing pipelines were benchmarked, with Model 7 used
-          for the production pipeline and a stacked ensemble for classification.
-          I led system architecture and built the LLM-based layer that turns model
-          outputs and patient risk factors into clinician-readable summaries.
-
-          The complete prototype was developed and evaluated independently by our team;
-          there is no formal agreement with PGI-MER, and clinical adoption or deployment
-          there has not taken place.
-
-        </p>
-
-
-        <div class="proj-stack">
-
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">React</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Scikit-image</span>
-          <span class="tag">Scikit-learn</span>
-          <span class="tag">Random Forest</span>
-          <span class="tag">Computer Vision</span>
-
-        </div>
-
-      </div>
-
-
-      <!-- =========================
            LLM CASCADE EVAL
       ========================= -->
 
-      <div class="project-card">
+      <div class="project-card" style="border-left: 3px solid var(--gwen-border-strong);">
 
         <div class="proj-top">
 
@@ -1080,23 +1019,20 @@
 
         <p class="proj-desc">
 
-          A weak-to-strong model cascade for code generation, benchmarked against
-          a single-shot call to a strong proprietary baseline (Gemini 3.6 Flash).
-
-          Problems route through progressively stronger reviewers — each told
-          explicitly whether the current draft passes or fails, and the exact
-          error if it fails — escalating only when a model can't AGREE the
-          draft is correct.
-
-          Code problems are scored by direct test-suite execution; open-ended
-          problems use a blinded, rubric-based third-party LLM judge excluded
-          from both systems under test, with a disclosed manual audit sample.
+          A weak-to-strong Ollama model cascade for code generation, benchmarked
+          against Gemini 3.6 Flash. Code problems are verifier-gated: each candidate
+          is executed against the problem's test suite, and escalation happens only
+          on a verified failure — not on LLM review. Open-ended problems use a
+          separate AGREE/EDIT/REWRITE review protocol, since no deterministic check
+          exists there.
 
           <br /><br />
 
-          In an honest 4-problem pilot, the cascade passed 4/4 versus Gemini's
-          3/4, with the token overhead on easier problems disclosed alongside
-          the win rather than hidden behind a single ratio.
+          In a 3-problem pilot, the cascade reached 3/3 correctness, matching both
+          governed Gemini retry conditions and beating ungoverned one-shot Gemini
+          (2/3). Switching code evaluation from review-gating to verifier-gating cut
+          cascade token cost by 61.5% on the same problems (23,645 → 9,101 tokens) —
+          though the cascade still costs more than one-shot Gemini.
 
         </p>
 
@@ -1107,7 +1043,7 @@
           <span class="tag">Gemini API</span>
           <span class="tag">Python</span>
           <span class="tag">Evaluation Harness</span>
-          <span class="tag">LLM-as-Judge</span>
+          <span class="tag">Verifier-Gated Cascade</span>
 
         </div>
 
@@ -1116,7 +1052,7 @@
 
           <a
             class="proj-link"
-            href="https://github.com/Cheese-Singh"
+            href="https://github.com/Cheese-Singh/LLM-Cascade"
             target="_blank"
             rel="noopener"
           >
