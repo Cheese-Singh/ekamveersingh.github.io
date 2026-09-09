@@ -753,7 +753,6 @@
     ========================= */
 
     @media (max-width: 480px) {
-
       .hero h1 {
         font-size: 26px;
       }
@@ -777,7 +776,6 @@
       .project-card.gwen {
         padding: 1.25rem;
       }
-
     }
   </style>
 </head>
@@ -921,14 +919,14 @@
           <div class="proj-badges">
 
             <span class="proj-badge flagship">
-              Flagship · v1.0
+              Flagship · v1.1
             </span>
 
             <span class="gwen-release">
 
               <span class="gwen-release-dot"></span>
 
-              Released
+              v1.1 · Live
 
             </span>
 
@@ -939,26 +937,24 @@
 
         <p class="proj-desc">
 
-          Gwen is a fully local, privacy-first voice AI assistant for Apple Silicon.
+          Gwen is a local-first, agentic voice AI assistant for Apple Silicon.
 
-          The system combines voice input, MLX-Whisper transcription, tiered LLM
-          inference, tool-calling, speaker verification, TTS, multimodal I/O,
-          and macOS system control into a single assistant architecture.
+          The system combines a native SwiftUI interface with a Python/FastAPI backend,
+          MLX-powered on-device inference, voice interaction, tiered model routing,
+          tool-calling, persistent memory, multimodal I/O, and macOS system control.
 
           The project evolved from the MLX exploration series into a consolidated
-          system with a four-tier model architecture, ranging from lightweight
-          on-device models to larger cloud models for deeper responses.
+          personal-assistant architecture spanning lightweight on-device models and
+          higher-capability cloud models.
 
-          Gwen also incorporates persistent user state, latency logging,
-          semantic memory and retrieval, session summaries, web-search caching,
-          speaker verification, voice/text mode switching, interruption handling,
-          and support for image, PDF, and Word document generation and reading.
+          Gwen incorporates persistent user state, session history, semantic memory
+          and retrieval, real-time voice interaction, sentence-level TTS, acoustic
+          echo cancellation, voice/text mode switching, interruption handling, and
+          support for image, PDF, and Word document generation and reading.
 
           <br /><br />
 
-          
-            Gwen v1 is now released, with subsequent development continuing.
-          
+          Gwen v1.1 is now live.
 
         </p>
 
@@ -986,7 +982,7 @@
             target="_blank"
             rel="noopener"
           >
-            View Gwen v1 on GitHub ↗
+            View Gwen v1.1 on GitHub ↗
           </a>
 
         </div>
@@ -1023,16 +1019,16 @@
 
         <p class="proj-desc">
 
-          Computer vision system for screening fungal keratitis from In Vivo 
+          Computer vision system for screening fungal keratitis from In Vivo
           Confocal Microscopy images and patient risk factors, developed by a
           3-person team after a clinical need was raised by a PGI-MER physician to faculty.
 
-          Seven image-processing pipelines were benchmarked, with Model 7 used 
-          for the production pipeline and a stacked ensemble for classification. 
+          Seven image-processing pipelines were benchmarked, with Model 7 used
+          for the production pipeline and a stacked ensemble for classification.
           I led system architecture and built the LLM-based layer that turns model
           outputs and patient risk factors into clinician-readable summaries.
-          
-          The complete prototype was developed and evaluated independently by our team; 
+
+          The complete prototype was developed and evaluated independently by our team;
           there is no formal agreement with PGI-MER, and clinical adoption or deployment
           there has not taken place.
 
